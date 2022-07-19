@@ -16,8 +16,7 @@ How To use
       GlobalScope.launch {
                 var response =  okd.creatPayment(invoice)
                 withContext(Dispatchers.Main){
-                  
- startActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.body()?.checkout_url.toString())))
+                  startActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.body()?.checkout_url.toString())))
                 }
 
 ![Chargily ePay Gateway](https://raw.githubusercontent.com/Chargily/epay-gateway-php/main/assets/banner-1544x500.png "Chargily ePay Gateway")
