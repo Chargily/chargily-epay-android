@@ -9,13 +9,15 @@ How To use
 
       //creat a invoice model 
       
-        val invoice :InnoviceModel = InnoviceModel("mohameed" ,"mohamed.hacine00@gmail.com" , "3545644" , 009999.4 , 7.5 ,"https://www.paloaltonetworks.com",
+        val invoice :InnoviceModel = 
+        InnoviceModel("mohameed" ,"mohamed.hacine00@gmail.com" , "3545644" , 009999.4 , 7.5 ,"https://www.paloaltonetworks.com",
             "https://www.paloaltonetworks.com/purshase" , PaymentMethode.EDAHABIA ,"Hola ")
             
 
       GlobalScope.launch {
-                var response =  okd.creatPayment(invoice)
+                var response =  chargiliClient.creatPayment(invoice)
                 withContext(Dispatchers.Main){
+                // this will open an app chooser for web Browser
                   startActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.body()?.checkout_url.toString())))
                 }
 
