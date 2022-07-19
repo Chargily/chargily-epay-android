@@ -1,5 +1,24 @@
 # epay-gateway-android
 Chargily ePay Gateway (Android SDK)
+How To use 
+
+        // creat a client Instance
+        val chargiliClient : Chargily = Chargily("Put your API KEY HERE ")
+        
+
+
+      //creat a invoice model 
+      
+        val invoice :InnoviceModel = InnoviceModel("mohameed" ,"mohamed.hacine00@gmail.com" , "3545644" , 009999.4 , 7.5 ,"https://www.paloaltonetworks.com",
+            "https://www.paloaltonetworks.com/purshase" , PaymentMethode.EDAHABIA ,"Hola ")
+            
+
+      GlobalScope.launch {
+                var response =  okd.creatPayment(invoice)
+                withContext(Dispatchers.Main){
+                  
+ startActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse(response.body()?.checkout_url.toString())))
+                }
 
 ![Chargily ePay Gateway](https://raw.githubusercontent.com/Chargily/epay-gateway-php/main/assets/banner-1544x500.png "Chargily ePay Gateway")
 
