@@ -2,6 +2,8 @@
 Chargily ePay Gateway (Android SDK)
 How To use 
 
+        I will add this to MAVEn As soon as possible
+
         // creat a client Instance
         val chargiliClient : Chargily = Chargily("Put your API KEY HERE ")
         
